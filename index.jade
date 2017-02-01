@@ -1,0 +1,91 @@
+doctype html
+html(lang='en')
+  head
+    title Jade
+    link(rel='stylesheet', type='text/css', href='css/reset.css')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+  body
+    section.wrapper
+      header
+        .banner
+          img(src='images/banner.png', alt='banner')
+        .banner-content
+          a(href='index.html')
+            img(src='images/logo.png',alt='logo')
+          p A great new free psd theme to showcase your new application. 
+          ul.banner-icon
+            li 
+              a(href='javascript:void(0);')
+                span.icon-appleinc.icon-style
+            li 
+              a(href='javascript:void(0);')
+                span.icon-android.icon-style
+            li 
+              a(href='javascript:void(0);')
+                span.icon-windows.icon-style    
+      section.features
+      
+        -var imagearray=['images/settings.png','images/design.png','images/reach.png']
+        -var titlearray=['Editable Theme','Flat Design','Reach Your Audience']
+        -var para='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.'
+        .features-content
+          -var i=0;
+          -each image in imagearray
+            .content-details
+              img(src=image alt="features-images")
+              h2=titlearray[i]
+              p=para
+              .clear
+              -i++;
+      section.reach-me
+        section.reachme-content
+          .reachby-mail
+            h2 Get Notified Of Any Updates!
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              | Suspendisse fringilla fringilla nisl congue congue.Maecenas nec condimentum libero, at elementum mauris.
+              | Phasellus eget nisi dapibus, ultricies nisl at, hendrerit risusuis ornare luctus id sollicitudin ante lobortis at.
+            form
+              input(type='text', name='user',placeholder="User Name")
+              input(type='text', name='email',placeholder="Email Address")
+              input(type='text', name='phone',placeholder="Phone Number")
+              button.mybtn Notify
+          .rechme-video
+            video(poster="images/preview.png",width="320", height="240", controls)
+              source(src="http://www.w3schools.com/html/movie.mp4", type="video/mp4")
+              source(src="http://www.w3schools.com/html/movie.mp4", type="video/ogg")
+              |Your browser does not support the video tag.
+          .clear
+      section.images
+        p
+          | 	&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum velit vitae nulla molestie eu commodo nulla dapib us. Donec id sollicitudin urna. Integer at dui ac leo fermentum varius eleifend ut.	&rdquo;
+        span Jane Hunt
+        figure
+          - for(var i=1;i<=21;i++)
+             img.thumbnail(src="images/img#{i}.png")
+        h2.msg Say Hi &amp; Get in Touch
+        h4 Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendisse.
+        mixin social(name)
+         a(href='javascript:void(0)')
+          span(class="#{name}"+" social-icons")
+        div.social
+         +social("icon-twitter")
+         +social("icon-facebook2")
+         +social("icon-pinterest")
+         +social("icon-google-plus3")
+         +social("icon-linkedin")
+         +social("icon-youtube")
+      footer
+        -var footerarray=["Contact","Download","Press","Email","Support","Privacy Policy"]
+        ul
+         -each foot in footerarray
+          li
+            a(href="javascript:void(0)")= foot
+        .clear
+         
+          
+      
+            
+          
+        
